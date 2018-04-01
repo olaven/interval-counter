@@ -1,3 +1,7 @@
+//REFACTOR: Dependecy on .elem is redundant as .id is 
+//present already. 
+
+
 /**
  * assigns listener of type specified 
  * requires element representation in pairs to have 
@@ -34,7 +38,18 @@ let assignItemsToId = (pairs) => {
     //for(pair of pairs){ //causes "not iterable"-error
     for(pair in pairs) { 
                     //document.getElem....
-        pairs[pair].elem = get(pairs[pair].id); 
+        pairs[pair].elem = get(pairs[pair].id);
+    }
+}
+
+/**
+ * Prints .value set to innerHTML of .id 
+ * [{value : "printMe", id : "toMe"}, ..]
+ * @param pairs Array with objects with .value and .id 
+ */
+let printValueToId = (pairs) => {
+    for(pair in pairs){
+        get(pairs[pair].id).innerHTML = pairs[pair].value; 
     }
 }
 
@@ -51,3 +66,11 @@ let get = (id) => {
     return elem; 
 } 
 
+/**
+ * updates/assigns .value of object
+ * @param object to update 
+ * @param value update to 
+ */
+let updateValue = (object, value) => {
+    object.value = value; 
+}
