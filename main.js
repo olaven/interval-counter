@@ -1,26 +1,18 @@
-let TICK = 1000; 
+let TICK = 100; 
 let running = false;
 let interval = 30;  
 
 //declare buttons
 let buttons = { 
-    startBtn: {
+    button: {
         elem: null,
-        id: "startBtn", 
+        id: "button", 
         listeners: [
             {
                 event : "click", 
-                action : () => {start();}
-            }
-        ]
-    },
-    stopBtn: {
-        elem: null,
-        id: "stopBtn",
-        listeners: [
-            {
-                event : "click", 
-                action : () => {stop();}
+                action : () => {
+                    triggerRunning(); 
+                }
             }
         ]
     }
@@ -42,8 +34,14 @@ let outputs = {
         id : "countOutput", 
         value : 0,
         update : () => {
-            let current = outputs.countOutput.value; 
-            let count = outputs.countOutput.value; 
+            let current = outputs.currentTimeOutput.value; 
+            let count = outputs.countOutput.value;
+            
+            if(current > (interval - 1)){
+                return (current + 1); 
+            } else {
+                return current; 
+            }
         }
     }
 }
@@ -86,15 +84,8 @@ let updateOutputs = () => {
 }
 
 /**
- * starts counting intervals 
+ * starts/stops
  */
-let start = () => {
-    running = true; 
-}
-
-/**
- * stops counting intervals 
- */
-let stop = () => {
-    running = false; 
+let triggerRunning = () => {
+    running = !running; 
 }
