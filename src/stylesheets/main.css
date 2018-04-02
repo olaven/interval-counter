@@ -1,0 +1,43 @@
+:root{
+    --primary-color: coral; 
+    --secondary-color: ghostwhite; 
+
+;}
+body{
+    margin: 0; 
+    background-color: var(--primary-color); 
+    color: var(--secondary-color); 
+
+    font-size: 2em; 
+}
+
+.containers{
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    width: 75vw; 
+
+    padding-top: 5vh;   
+    padding-bottom: 5vh; 
+
+    margin: auto; 
+    margin-top: 2vh; 
+    margin-top: 2vh; 
+
+    transition-duration: 0.5s; 
+}
+.containers:hover{
+    transform: scale(1.05); 
+    box-shadow: 0.5px 1px 10px 1px black; 
+}
+
+#inputContainer{
+    text-align: center; 
+}
+#inputContainer #button{
+    height: 5vh;
+    width: 90%; 
+
+    border-style: none; 
+    background-color: var(--primary-color); 
+    color: var(--secondary-color); 
+}
