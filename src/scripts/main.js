@@ -1,4 +1,4 @@
-let TICK = 100; 
+let TICK = 1000;//ms  
 let running = false;
 let interval = 30;  
 
