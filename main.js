@@ -34,14 +34,11 @@ let outputs = {
         id : "countOutput", 
         value : 0,
         update : () => {
-            let current = outputs.currentTimeOutput.value; 
-            let count = outputs.countOutput.value;
+            let current = parseInt(outputs.currentTimeOutput.value); 
+            let count = parseInt(outputs.countOutput.value);
             
-            if(current > (interval - 1)){
-                return (current + 1); 
-            } else {
-                return current; 
-            }
+            if(current >= interval - 1) return count + 1
+            else return count; 
         }
     }
 }
