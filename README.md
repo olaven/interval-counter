@@ -2,6 +2,8 @@
 
 Helper application for timing simple intervals 
 
+__Not Done__
+
 
 
 ## Note on code: 
