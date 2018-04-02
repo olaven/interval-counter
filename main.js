@@ -55,7 +55,7 @@ window.onload = () => {
 
     setInterval(() => {
         app(); 
-    }, TICK)
+    }, TICK); 
 }
 
 /**
