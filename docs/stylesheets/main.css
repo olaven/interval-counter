@@ -14,7 +14,7 @@ body{
 .containers{
     background-color: var(--secondary-color);
     color: var(--primary-color);
-    width: 75vw; 
+    width: 55vw; 
 
     padding-top: 5vh;   
     padding-bottom: 5vh; 
@@ -25,6 +25,7 @@ body{
 
     transition-duration: 0.5s; 
 }
+
 .containers:hover{
     transform: scale(1.05); 
     box-shadow: 0.5px 1px 10px 1px black; 
@@ -33,11 +34,28 @@ body{
 #inputContainer{
     text-align: center; 
 }
-#inputContainer #button{
+
+#inputContainer button{
     height: 5vh;
     width: 90%; 
 
     border-style: none; 
     background-color: var(--primary-color); 
     color: var(--secondary-color); 
+}
+
+#outputContainer{
+    text-align: center; 
+    column-count: 1; 
+}
+
+/*Smaller screens:*/
+@media (max-width: 767.98px) {
+    .containers{
+        height: 30vh;
+    }
+    #InputContainer button {
+        height: 30vh;
+        font-size: 3em; 
+    }
 }
